@@ -98,7 +98,7 @@ describe('End to End Tests', () => {
       .wait('#output')
       .evaluate(() => document.querySelector('#output').innerText)
       .then((outputText) => {
-        expect(outputText).to.equal('$1389');
+        expect(outputText).to.equal('$1389.35');
       })
   ).timeout(6500);
 

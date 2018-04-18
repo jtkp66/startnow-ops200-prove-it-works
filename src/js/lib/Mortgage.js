@@ -11,7 +11,7 @@ module.exports = class Mortgage {
       const numberOfPayments = this.term * this.period
       const compoundedInterestRate = Math.pow((1 + monthlyInterestRate), numberOfPayments)
       const interestQuotient = (monthlyInterestRate * compoundedInterestRate) / ( (Math.pow((1 + monthlyInterestRate), numberOfPayments)) - 1)
-      const monthlyPayment = Math.floor(this.principal * interestQuotient)
-      return monthlyPayment
+      const monthlyPayment = this.principal * interestQuotient
+      return monthlyPayment.toFixed(2)
     }
   }
