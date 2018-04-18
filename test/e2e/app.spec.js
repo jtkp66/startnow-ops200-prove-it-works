@@ -30,6 +30,14 @@ describe('End to End Tests', () => {
     done();
   });
 
-  
+  it('page says hello world', (done) => {
+    chai.request(server)
+      .get('/')
+      .end((err, res) => {
+        expect(err).not.exist;
+        expect(JSON.stringify(res.text)).to.contain('prove-it-works');
+        done();
+      });
+    });
   // This is where your code is going to go
 })
